@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		608D13DF29D25EBB00CB3C2E /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608D13DE29D25EBB00CB3C2E /* Pokemon.swift */; };
+		608D13E229D25EF000CB3C2E /* PokemonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608D13E129D25EF000CB3C2E /* PokemonManager.swift */; };
+		608D13E529D25F4300CB3C2E /* PokemonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608D13E429D25F4300CB3C2E /* PokemonViewModel.swift */; };
+		608D13E729D25FB900CB3C2E /* TypeAlias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608D13E629D25FB900CB3C2E /* TypeAlias.swift */; };
 		60EF1AA229D255220022A134 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EF1AA129D255220022A134 /* AppDelegate.swift */; };
 		60EF1AA429D255220022A134 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EF1AA329D255220022A134 /* SceneDelegate.swift */; };
 		60EF1AA629D255220022A134 /* PokemonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EF1AA529D255220022A134 /* PokemonController.swift */; };
@@ -15,9 +19,17 @@
 		60EF1AAE29D255230022A134 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60EF1AAC29D255230022A134 /* LaunchScreen.storyboard */; };
 		60EF1ABE29D255BC0022A134 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EF1ABD29D255BC0022A134 /* Constant.swift */; };
 		60EF1AC029D255C20022A134 /* ConstantService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EF1ABF29D255C20022A134 /* ConstantService.swift */; };
+		60EF1AC229D2565A0022A134 /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EF1AC129D2565A0022A134 /* ErrorResponse.swift */; };
+		60EF1AC429D256750022A134 /* NetworkManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EF1AC329D256750022A134 /* NetworkManagerProtocol.swift */; };
+		60EF1AC629D2567A0022A134 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EF1AC529D2567A0022A134 /* NetworkManager.swift */; };
+		60EF1AC929D256980022A134 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 60EF1AC829D256980022A134 /* Alamofire */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		608D13DE29D25EBB00CB3C2E /* Pokemon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pokemon.swift; sourceTree = "<group>"; };
+		608D13E129D25EF000CB3C2E /* PokemonManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonManager.swift; sourceTree = "<group>"; };
+		608D13E429D25F4300CB3C2E /* PokemonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonViewModel.swift; sourceTree = "<group>"; };
+		608D13E629D25FB900CB3C2E /* TypeAlias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeAlias.swift; sourceTree = "<group>"; };
 		60EF1A9E29D255220022A134 /* Pokemon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pokemon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		60EF1AA129D255220022A134 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		60EF1AA329D255220022A134 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -28,6 +40,9 @@
 		60EF1AAF29D255230022A134 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		60EF1ABD29D255BC0022A134 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		60EF1ABF29D255C20022A134 /* ConstantService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantService.swift; sourceTree = "<group>"; };
+		60EF1AC129D2565A0022A134 /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
+		60EF1AC329D256750022A134 /* NetworkManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerProtocol.swift; sourceTree = "<group>"; };
+		60EF1AC529D2567A0022A134 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,12 +50,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60EF1AC929D256980022A134 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		608D13E029D25EE800CB3C2E /* Pokemon */ = {
+			isa = PBXGroup;
+			children = (
+				608D13E129D25EF000CB3C2E /* PokemonManager.swift */,
+			);
+			path = Pokemon;
+			sourceTree = "<group>";
+		};
+		608D13E329D25F3A00CB3C2E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				608D13E429D25F4300CB3C2E /* PokemonViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		60EF1A9529D255220022A134 = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +135,7 @@
 		60EF1AB829D255610022A134 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				608D13E629D25FB900CB3C2E /* TypeAlias.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -110,6 +143,7 @@
 		60EF1AB929D255670022A134 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				608D13DE29D25EBB00CB3C2E /* Pokemon.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -117,6 +151,7 @@
 		60EF1ABA29D2556B0022A134 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				608D13E029D25EE800CB3C2E /* Pokemon */,
 				60EF1ABC29D255960022A134 /* Core */,
 			);
 			path = Network;
@@ -125,6 +160,7 @@
 		60EF1ABB29D2558B0022A134 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				608D13E329D25F3A00CB3C2E /* ViewModel */,
 				60EF1AA529D255220022A134 /* PokemonController.swift */,
 			);
 			path = Home;
@@ -133,6 +169,9 @@
 		60EF1ABC29D255960022A134 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				60EF1AC129D2565A0022A134 /* ErrorResponse.swift */,
+				60EF1AC329D256750022A134 /* NetworkManagerProtocol.swift */,
+				60EF1AC529D2567A0022A134 /* NetworkManager.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -153,6 +192,9 @@
 			dependencies = (
 			);
 			name = Pokemon;
+			packageProductDependencies = (
+				60EF1AC829D256980022A134 /* Alamofire */,
+			);
 			productName = Pokemon;
 			productReference = 60EF1A9E29D255220022A134 /* Pokemon.app */;
 			productType = "com.apple.product-type.application";
@@ -181,6 +223,9 @@
 				Base,
 			);
 			mainGroup = 60EF1A9529D255220022A134;
+			packageReferences = (
+				60EF1AC729D256980022A134 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 60EF1A9F29D255220022A134 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -210,7 +255,14 @@
 			files = (
 				60EF1AA629D255220022A134 /* PokemonController.swift in Sources */,
 				60EF1AA229D255220022A134 /* AppDelegate.swift in Sources */,
+				60EF1AC429D256750022A134 /* NetworkManagerProtocol.swift in Sources */,
 				60EF1AA429D255220022A134 /* SceneDelegate.swift in Sources */,
+				60EF1AC629D2567A0022A134 /* NetworkManager.swift in Sources */,
+				608D13DF29D25EBB00CB3C2E /* Pokemon.swift in Sources */,
+				608D13E729D25FB900CB3C2E /* TypeAlias.swift in Sources */,
+				60EF1AC229D2565A0022A134 /* ErrorResponse.swift in Sources */,
+				608D13E529D25F4300CB3C2E /* PokemonViewModel.swift in Sources */,
+				608D13E229D25EF000CB3C2E /* PokemonManager.swift in Sources */,
 				60EF1AC029D255C20022A134 /* ConstantService.swift in Sources */,
 				60EF1ABE29D255BC0022A134 /* Constant.swift in Sources */,
 			);
@@ -432,6 +484,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		60EF1AC729D256980022A134 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		60EF1AC829D256980022A134 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 60EF1AC729D256980022A134 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 60EF1A9629D255220022A134 /* Project object */;
 }
