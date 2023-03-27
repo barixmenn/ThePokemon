@@ -13,6 +13,8 @@
 		60EF1AA929D255220022A134 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60EF1AA729D255220022A134 /* Main.storyboard */; };
 		60EF1AAB29D255230022A134 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60EF1AAA29D255230022A134 /* Assets.xcassets */; };
 		60EF1AAE29D255230022A134 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60EF1AAC29D255230022A134 /* LaunchScreen.storyboard */; };
+		60EF1ABE29D255BC0022A134 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EF1ABD29D255BC0022A134 /* Constant.swift */; };
+		60EF1AC029D255C20022A134 /* ConstantService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EF1ABF29D255C20022A134 /* ConstantService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		60EF1AAA29D255230022A134 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		60EF1AAD29D255230022A134 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		60EF1AAF29D255230022A134 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		60EF1ABD29D255BC0022A134 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		60EF1ABF29D255C20022A134 /* ConstantService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +94,8 @@
 		60EF1AB729D2555C0022A134 /* Constant */ = {
 			isa = PBXGroup;
 			children = (
+				60EF1ABD29D255BC0022A134 /* Constant.swift */,
+				60EF1ABF29D255C20022A134 /* ConstantService.swift */,
 			);
 			path = Constant;
 			sourceTree = "<group>";
@@ -205,6 +211,8 @@
 				60EF1AA629D255220022A134 /* PokemonController.swift in Sources */,
 				60EF1AA229D255220022A134 /* AppDelegate.swift in Sources */,
 				60EF1AA429D255220022A134 /* SceneDelegate.swift in Sources */,
+				60EF1AC029D255C20022A134 /* ConstantService.swift in Sources */,
+				60EF1ABE29D255BC0022A134 /* Constant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
