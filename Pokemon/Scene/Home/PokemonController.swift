@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class PokemonController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
