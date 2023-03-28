@@ -8,3 +8,4 @@
 import UIKit
 
 typealias ConfigureTableView = UITableViewDelegate & UITableViewDataSource
+typealias ConfigureCollectionView = UICollectionViewDelegate & UICollectionViewDataSource

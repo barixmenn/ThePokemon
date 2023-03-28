@@ -9,12 +9,12 @@ import Foundation
 
 protocol PokemonViewModelProtocol {
     func getPokemon(completion: @escaping ((String?) ->Void))
-    func getPokemonSpritesURL(index:Int) -> URL?
+    func getPokemonSprites(index:Int) -> URL?
     
 }
 final class PokemonViewModel: PokemonViewModelProtocol {
     let manager = PokemonManager.shared
-    var pokemons: [GetPokemonsResponse.Pokemon] = []
+    var pokemons: [Pokemon] = []
 }
 
 extension PokemonViewModel {
@@ -27,11 +27,12 @@ extension PokemonViewModel {
         }
     }
     
-    func getPokemonSpritesURL(index: Int) -> URL? {
+    func getPokemonSprites(index: Int) -> URL? {
         let pokemon = pokemons[index]
         return PokemonManager.shared.fetchPokemonSprites(id: pokemon.pokemonID)!
     }
-    func getPokemonDetailURL(for index: Int) -> URL {
+    
+    func getPokemonDetail(for index: Int) -> URL {
         let pokemon = pokemons[index]
         return PokemonManager.shared.getPokemonOfficialArtwork(id: pokemon.pokemonID)!
     }

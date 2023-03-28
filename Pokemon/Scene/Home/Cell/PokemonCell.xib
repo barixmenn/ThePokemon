@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="112" id="EK9-Ys-9eg" customClass="PokemonCell" customModule="Pokemon">
+            <rect key="frame" x="0.0" y="0.0" width="300" height="112"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="EK9-Ys-9eg" id="NlJ-HX-bZP">
+                <rect key="frame" x="0.0" y="0.0" width="300" height="112"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="khd-gg-uMM">
+                        <rect key="frame" x="5" y="5" width="290" height="67"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fhP-9e-yut">
+                                <rect key="frame" x="0.0" y="0.0" width="90" height="103"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="103" id="NDf-Ug-1F2"/>
+                                    <constraint firstAttribute="width" constant="90" id="dzO-yG-YJ7"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1TN-fn-r1o">
+                                <rect key="frame" x="113" y="20" width="169" height="27"/>
+                                <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="1TN-fn-r1o" secondAttribute="trailing" constant="8" id="8Sq-oa-s2N"/>
+                            <constraint firstItem="fhP-9e-yut" firstAttribute="leading" secondItem="khd-gg-uMM" secondAttribute="leading" id="BQS-tb-24R"/>
+                            <constraint firstAttribute="bottom" secondItem="1TN-fn-r1o" secondAttribute="bottom" constant="20" id="az8-rb-XkF"/>
+                            <constraint firstItem="1TN-fn-r1o" firstAttribute="leading" secondItem="fhP-9e-yut" secondAttribute="trailing" constant="23" id="d8G-d6-4qp"/>
+                            <constraint firstItem="1TN-fn-r1o" firstAttribute="top" secondItem="khd-gg-uMM" secondAttribute="top" constant="20" id="hh6-Nc-vF6"/>
+                            <constraint firstAttribute="bottom" secondItem="fhP-9e-yut" secondAttribute="bottom" id="qJx-dx-ngy"/>
+                            <constraint firstItem="fhP-9e-yut" firstAttribute="top" secondItem="khd-gg-uMM" secondAttribute="top" id="vue-gT-iwE"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="15"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="khd-gg-uMM" firstAttribute="leading" secondItem="NlJ-HX-bZP" secondAttribute="leading" constant="5" id="dKx-yb-qVW"/>
+                    <constraint firstAttribute="bottom" secondItem="khd-gg-uMM" secondAttribute="bottom" constant="5" id="jZQ-C4-Vt7"/>
+                    <constraint firstItem="khd-gg-uMM" firstAttribute="top" secondItem="NlJ-HX-bZP" secondAttribute="top" constant="5" id="mGO-gL-HOq"/>
+                    <constraint firstAttribute="trailing" secondItem="khd-gg-uMM" secondAttribute="trailing" constant="5" id="wb7-X0-UXR"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="bw5-GS-Whw"/>
+            <connections>
+                <outlet property="pokemonImage" destination="fhP-9e-yut" id="7YW-SR-tan"/>
+                <outlet property="pokemonName" destination="1TN-fn-r1o" id="q0r-pc-nNg"/>
+            </connections>
+            <point key="canvasLocation" x="-30.534351145038165" y="11.267605633802818"/>
+        </tableViewCell>
+    </objects>
+</document>
