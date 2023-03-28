@@ -22,16 +22,28 @@ class PokemonController: UIViewController {
     
     //MARK: - Functions
     fileprivate func configure() {
-           //collectionSetup()
         getData()
+        tableViewSetup()
 
        }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goDetail" {
+            let destination = segue.destination as? PokemonDetailController
+            let indexPath = sender as? Int
+            let pokemon = viewModel.pokemons[indexPath!]
+        
+            destination?.viewModel = PokemonDetailViewModel(pokemonId: "\(indexPath! + 1)", name: pokemon.name, imageURL: viewModel.getPokemonDetail(for: indexPath!))
+        }
+        
+    }
     
     fileprivate func getData() {
         self.viewModel.getPokemon { pokemon in
             DispatchQueue.main.async {
                 self.tableView.reloadData()
-                print(pokemon)
+                
+                
             }
         }
     }
@@ -39,17 +51,36 @@ class PokemonController: UIViewController {
     //MARK: - Actions
 }
 
+//MARK: - CollectionView Extensions
+extension PokemonController {
+    fileprivate func tableViewSetup() {
+        navigationController?.navigationBar.prefersLargeTitles = true
+        tableView.register(UINib(nibName: "PokemonCell", bundle: nil), forCellReuseIdentifier: "cell")
+
+    }
+}
+
 
 extension PokemonController: ConfigureTableView {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        viewModel.pokemons?.results.count ?? 10
+        viewModel.pokemons.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        let pokemon = viewModel.pokemons?.results[indexPath.row]
-        cell.textLabel?.text =  pokemon?.name
-        return cell
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "cell",for: indexPath) as? PokemonCell {
+                 let pokemon = viewModel.pokemons[indexPath.row]
+                 cell.pokemonName.text = pokemon.name
+            
+                 
+            cell.loadImage(from: viewModel.getPokemonSprites(index: indexPath.row))
+                 return cell
+             }
+             return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "goDetail", sender: indexPath.row)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     
