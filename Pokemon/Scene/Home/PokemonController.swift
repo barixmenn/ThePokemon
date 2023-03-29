@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PokemonController: UIViewController {
+final class PokemonController: UIViewController {
 
     //MARK: - UI Elements
     @IBOutlet weak var tableView: UITableView!
@@ -72,7 +72,7 @@ extension PokemonController: ConfigureTableView {
                  cell.pokemonName.text = pokemon.name
             
                  
-            cell.loadImage(from: viewModel.getPokemonSprites(index: indexPath.row))
+                cell.loadImage(from: viewModel.getPokemonSprites(index: indexPath.row))
                  return cell
              }
              return UITableViewCell()

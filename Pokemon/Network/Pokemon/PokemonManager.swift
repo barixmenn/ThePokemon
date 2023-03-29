@@ -9,7 +9,7 @@
 import Foundation
 
 protocol PokemonManagerProtocol {
-    func fetchPokemons(complete: @escaping((GetPokemonsResponse?,Error?) -> ()))
+    func fetchPokemons(complete: @escaping((PokemonsResponse?,Error?) -> ()))
     func fetchPokemonSprites(id:String) -> URL?
     func fetchPokemon(id: String, complete: @escaping((PokemonDetailResponse?,Error?) -> ()))
 }
@@ -21,8 +21,8 @@ final class PokemonManager: PokemonManagerProtocol {
 
 extension PokemonManager {
     
-    func fetchPokemons(complete: @escaping ((GetPokemonsResponse?, Error?) -> ())) {
-        NetworkManager.shared.request(type: GetPokemonsResponse.self, url: Constant.ServiceEndPoint.pokemonEndPoint(), method: .get) { response in
+    func fetchPokemons(complete: @escaping ((PokemonsResponse?, Error?) -> ())) {
+        NetworkManager.shared.request(type: PokemonsResponse.self, url: ServiceEndPoint.pokemonEndPoint(), method: .get) { response in
             switch response {
             case .success(let data):
                 complete(data,nil)
@@ -32,7 +32,7 @@ extension PokemonManager {
         }
     }
     func fetchPokemon(id: String, complete: @escaping ((PokemonDetailResponse?, Error?) -> ())) {
-        NetworkManager.shared.request(type: PokemonDetailResponse.self, url: Constant.ServiceEndPoint.getPokemonEndPoint(id: id), method: .get) { response  in
+        NetworkManager.shared.request(type: PokemonDetailResponse.self, url: ServiceEndPoint.getPokemonEndPoint(id: id), method: .get) { response  in
             switch response {
             case .success(let data):
                 complete(data,nil)

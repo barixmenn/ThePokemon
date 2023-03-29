@@ -6,20 +6,13 @@
 //
 
 import UIKit
-
-protocol PokemonCellProtocol {
-    var pokemonName: String { get }
-    var pokemonImage: String { get }
-
-}
+import SDWebImage
 
 class PokemonCell: UITableViewCell {
 
     @IBOutlet weak var pokemonName: UILabel!
     @IBOutlet weak var pokemonImage: UIImageView!
     
-
-
     func loadImage(from url: URL?) {
             guard let url = url else { return }
             URLSession.shared.dataTask(with: url) { (data, response, error) in
@@ -31,5 +24,4 @@ class PokemonCell: UITableViewCell {
                 }
             }.resume()
         }
-    
 }

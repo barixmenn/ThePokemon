@@ -8,7 +8,7 @@
 import UIKit
 import SDWebImage
 
-class PokemonDetailController: UIViewController {
+final class PokemonDetailController: UIViewController {
     
     //MARK: - UI Elements
     @IBOutlet weak var viewDesing: UIView!
