@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class PokemonController: UIViewController {
+final class HomeController: UIViewController {
 
     //MARK: - UI Elements
     @IBOutlet weak var tableView: UITableView!
@@ -18,11 +18,13 @@ final class PokemonController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
+        viewModel.delegate = self
+        viewModel.getPokemon()
+        
     }
     
     //MARK: - Functions
     fileprivate func configure() {
-        getData()
         tableViewSetup()
 
        }
@@ -38,21 +40,27 @@ final class PokemonController: UIViewController {
         
     }
     
-    fileprivate func getData() {
-        self.viewModel.getPokemon { pokemon in
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-                
-                
-            }
-        }
-    }
+
     
     //MARK: - Actions
 }
 
+extension HomeController: PokemonViewModelProtocol {
+    func didErrorList(error: String) {
+        AlertMessage.alertMessageShow(title: .error, message: error, viewController: self)
+    }
+    
+    func didSuccessList() {
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+    }
+    
+    
+}
+
 //MARK: - CollectionView Extensions
-extension PokemonController {
+extension HomeController {
     fileprivate func tableViewSetup() {
         navigationController?.navigationBar.prefersLargeTitles = true
         tableView.register(UINib(nibName: "PokemonCell", bundle: nil), forCellReuseIdentifier: "cell")
@@ -61,7 +69,7 @@ extension PokemonController {
 }
 
 
-extension PokemonController: ConfigureTableView {
+extension HomeController: ConfigureTableView {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         viewModel.pokemons.count
     }
@@ -73,6 +81,7 @@ extension PokemonController: ConfigureTableView {
             
                  
                 cell.loadImage(from: viewModel.getPokemonSprites(index: indexPath.row))
+            
                  return cell
              }
              return UITableViewCell()

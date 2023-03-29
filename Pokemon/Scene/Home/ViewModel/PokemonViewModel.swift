@@ -7,23 +7,26 @@
 
 import Foundation
 
-protocol PokemonViewModelProtocol {
-    func getPokemon(completion: @escaping ((String?) ->Void))
-    func getPokemonSprites(index:Int) -> URL?
+protocol PokemonViewModelProtocol: AnyObject {
+    func didErrorList(error: String)
+    func didSuccessList()
     
 }
-final class PokemonViewModel: PokemonViewModelProtocol {
-    let manager = PokemonManager.shared
+final class PokemonViewModel {
+    var delegate : PokemonViewModelProtocol?
+    private let manager = PokemonManager.shared
     var pokemons: [Pokemon] = []
+   
 }
 
 extension PokemonViewModel {
-    func getPokemon(completion: @escaping ((String?) -> Void)) {
+    func getPokemon() {
         manager.fetchPokemons { pokemons, error in
             if pokemons != nil {
                 self.pokemons = pokemons?.results ?? []
+                self.delegate?.didSuccessList()
             }
-            completion(error?.localizedDescription)
+            self.delegate?.didErrorList(error: error?.localizedDescription ?? "error")
         }
     }
     
