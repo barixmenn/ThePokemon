@@ -1,5 +1,4 @@
 # ThePokemon
-Itunes Store top song.
 
     
     ## Technologies
