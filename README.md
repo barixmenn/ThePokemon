@@ -3,7 +3,6 @@
     
     ## Technologies
 + MVVM Architecture ✅ 
-+ Programmatically ✅
 + Alamofire ✅
 + SDWebImage ✅
 
